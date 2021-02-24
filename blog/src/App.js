@@ -13,6 +13,7 @@ function App() {
       <div className="black-nav">
         <div>개발 Blog</div>
       </div>
+      <button onClick={()=>{글제목변경(['여자 코트 추천', '강남 우동 맛집', '신림 맛집', '영등포 맛집']);}}>버튼</button>
       <div className="list">
         <h3> { 글제목[0] } <span onClick={()=> {좋아요변경(좋아요+1);}}>👍</span> {좋아요} </h3>
         <p>2월 17일 발행</p>
