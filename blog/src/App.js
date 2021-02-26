@@ -22,31 +22,24 @@ function App() {
         <div>개발 Blog</div>
       </div>
       {/* <button onClick={ change }>버튼</button> */}
-      <div className="list">
-        <h3> { 글제목[0] } <span onClick={()=> {좋아요변경(좋아요+1);}}>👍</span> {좋아요} </h3>
-        <p>2월 17일 발행</p>
-        <hr/>
-      </div>
-      <div className="list">
-        <h3> { 글제목[1] } </h3>
-        <p>2월 17일 발행</p>
-        <hr/>
-      </div>
-      <div className="list">
-        <h3> { 글제목[2] } </h3>
-        <p>2월 17일 발행</p>
-        <hr/>
-      </div>
-      <div className="list">
-        <h3> { 글제목[3] } </h3>
-        <p>2월 17일 발행</p>
-        <hr/>
-      </div>
+
+      {
+        글제목.map(function(글){
+          return(
+            <div className="list">
+              <h3> { 글 } <span onClick={()=> {좋아요변경(좋아요+1);}}>👍</span> {좋아요}</h3>
+              <p>2월 17일 발행</p>
+              <hr/>
+            </div>
+          )
+        })
+      }
+
 
       <button onClick={()=>{modal변경(!modal)}}>버튼</button>
       {
         modal === true
-        ? <Modal/>
+        ? <Modal 글제목={글제목}/>
         : null
       }
       
@@ -55,10 +48,10 @@ function App() {
   );
 }
 
-function Modal() {
+function Modal(props) {
   return(
     <div className="modal">
-      <h2>제목</h2>
+      <h2>{props.글제목[0]}</h2>
       <p>날짜</p>
       <p>상세내용</p>
     </div>
