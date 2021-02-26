@@ -29,7 +29,7 @@ function App() {
       {
         글제목.map(function(글, i){
           return(
-            <div className="list">
+            <div className="list" key={i}>
               <h3 onClick={()=>{누른제목변경(i); modal변경(true)}}> { 글 } <span onClick={()=> {
                 let newArray = [...좋아요];
                 newArray[i] = parseInt(newArray[i] + 1);
