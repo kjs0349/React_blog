@@ -41,7 +41,7 @@ function App() {
           )
         })
       }
-
+      {입력값}
       <input onChange={(e)=>{입력값변경(e.target.value); console.log({입력값})}}/>
 
       <button onClick={()=>{modal변경(!modal)}}>버튼</button>
