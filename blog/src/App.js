@@ -41,7 +41,17 @@ function App() {
           )
         })
       }
-      {입력값}
+      
+      <div className="publish">
+        <input onChange={(e)=>{입력값변경(e.target.value)}}/>
+        <button onClick={ ()=> { 
+          let newTitle = [...글제목];
+          newTitle.push(입력값);
+          글제목변경(newTitle);
+        }}>저장</button>
+      </div>
+
+
       <input onChange={(e)=>{입력값변경(e.target.value); console.log({입력값})}}/>
 
       <button onClick={()=>{modal변경(!modal)}}>버튼</button>
